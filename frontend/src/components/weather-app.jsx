@@ -14,7 +14,7 @@
 //       );
 //       setWeather(res.data);
 //       console.log(weather);
-//       console.log(`${import.meta.env.VITE_BACKEND_URL}`)
+//       console.log(import.meta.env.VITE_BACKEND_URL);
 //     } catch (err) {
 //       console.error(err);
 //     }
