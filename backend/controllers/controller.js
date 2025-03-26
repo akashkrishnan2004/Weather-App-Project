@@ -1,5 +1,8 @@
 import axios from "axios";
 import Search from "../model/search-model.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const API_KEY = process.env.WEATHER_API_KEY;
 
@@ -79,7 +82,6 @@ const getForecast = async (req, res) => {
   }
 };
 
-
 const getHistory = async (req, res) => {
   try {
     const history = await Search.find().sort({ timestamp: -1 });
@@ -98,4 +100,10 @@ const deleteHistory = async (req, res) => {
   }
 };
 
-export default { getWeather, getHistory, deleteHistory, getWeatherByLocation, getForecast };
+export default {
+  getWeather,
+  getHistory,
+  deleteHistory,
+  getWeatherByLocation,
+  getForecast,
+};
