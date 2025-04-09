@@ -122,7 +122,7 @@ export default function WeatherApp() {
   const getWeather = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/weather?city=${city}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/weather?city=${city}`
       );
       setWeather(res.data);
       console.log("Current weather:", res.data);
@@ -137,7 +137,7 @@ export default function WeatherApp() {
   const getForecast = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/forecast?city=${city}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/forecast?city=${city}`
       );
       setForecast(res.data);
       console.log("Forecast data:", res.data);
