@@ -36,10 +36,16 @@ const getWeather = async (req, res) => {
 
     res.json(weatherData);
   } catch (error) {
-    console.error(
-      "Error fetching weather data:",
-      error.response?.data || error.message
-    );
+    // console.error(
+    //   "Error fetching weather data:",
+    //   error.response?.data || error.message
+    // );
+    // res.status(500).json({ error: "Error fetching weather data" });
+    
+    console.error("Fetch weather error:", error.message);
+    if (error.response) {
+      console.error("OpenWeather error:", error.response.data);
+    }
     res.status(500).json({ error: "Error fetching weather data" });
   }
 };
