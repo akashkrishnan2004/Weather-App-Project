@@ -4,8 +4,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// const API_KEY = process.env.WEATHER_API_KEY;
-const API_KEY = "fbfc7fa2c0fca89a6886301731ca76c9";
+const API_KEY = process.env.WEATHER_API_KEY;
+
 const getWeather = async (req, res) => {
   const city = req.query.city;
   if (!city) {
