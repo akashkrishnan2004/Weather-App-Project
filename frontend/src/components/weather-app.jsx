@@ -111,6 +111,7 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+
 import "./css/weather-app.css";
 
 export default function WeatherApp() {
@@ -125,6 +126,8 @@ export default function WeatherApp() {
       );
       setWeather(res.data);
       console.log("Current weather:", res.data);
+      console.log(import.meta.env.VITE_BACKEND_URL);
+      
     } catch (err) {
       console.error("Error fetching weather:", err);
       alert("Failed to fetch weather data.");
